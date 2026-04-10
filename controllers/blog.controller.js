@@ -6,7 +6,7 @@ export const createBlog = async (req, res) => {
             title,
             description,
             image,
-            author: req.user._id
+            author: req.user
         });
         res.status(201).json({
             success: true,

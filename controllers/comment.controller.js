@@ -6,7 +6,7 @@ export const createComment = async (req, res) => {
         const comment = await Comment.create({
             content,
             blog: blogId,
-            author: req.user._id
+            author: req.user
         });
         res.status(201).json({
             success: true,

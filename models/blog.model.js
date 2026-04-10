@@ -12,7 +12,6 @@ const blogSchema = new Schema(
         },
         image: {
             type: String,
-            required: true,
             default: "https://placehold.co/600x400",
         },
         author: {

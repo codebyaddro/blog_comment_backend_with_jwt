@@ -8,7 +8,7 @@ dotenv.config();
 export const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-
+        console.log(req.body);
         const user = await User.create({
             name,
             email,
@@ -55,12 +55,13 @@ export const loginUser = async (req, res) => {
             { userId: user._id },
             process.env.JWT_SECRET_KEY,
             { expiresIn: process.env.JWT_EXPIRES_IN }
-        )
+        );
 
         res.status(200).json({
             success: true,
             message: "User logged in successfully",
-            user
+            user,
+            token
         })
     } catch (error) {
         res.status(500).json({
