@@ -3,5 +3,7 @@ import { createBlog, getBlogs } from './../controllers/blog.controller.js';
 
 const router = express.Router();
 
-router.get('/blogs', getBlogs);
-router.post('/blogs', createBlog);
+router.get('/', getBlogs);
+router.post('/', createBlog);
+
+export default router;
